@@ -1,5 +1,6 @@
 import React from "react";
 import { SubnetRequest } from "@/lib/types/subnetting";
+import { X } from "lucide-react";
 
 interface SubnetInputProps {
    subnet: SubnetRequest;
@@ -28,14 +29,14 @@ const SubnetInput: React.FC<SubnetInputProps> = ({
          <input
             type="text"
             placeholder="Název podsítě"
-            className="w-full max-w-xs p-2 rounded-md bg-zinc-700 border border-zinc-600 text-zinc-100"
+            className="w-full p-2.5 rounded-md bg-zinc-800/50 border border-zinc-700/50 text-white tracking-tight font-medium"
             value={subnet.name}
             onChange={(e) => onSubnetChange(subnet.id, "name", e.target.value)}
          />
          <input
             type="number"
             placeholder="Počet hostitelů"
-            className="w-full max-w-xs p-2 rounded-md bg-zinc-700 border border-zinc-600 text-zinc-100 font-mono"
+            className="w-full p-2.5 rounded-md bg-zinc-800/50 border border-zinc-700/50 text-white tracking-tight font-medium"
             value={subnet.size}
             onChange={(e) =>
                onSubnetChange(
@@ -48,23 +49,10 @@ const SubnetInput: React.FC<SubnetInputProps> = ({
          />
          <button
             onClick={() => onRemoveSubnet(subnet.id)}
-            className="bg-red-600/50 hover:bg-red-600 text-white font-bold p-2 rounded-md transition-colors"
+            className="cursor-pointer bg-rose-600 hover:bg-rose-700 text-white font-bold min-w-12 h-12 flex items-center justify-center rounded-md transition-colors"
             aria-label="Odebrat podsíť"
          >
-            <svg
-               xmlns="http://www.w3.org/2000/svg"
-               className="h-6 w-6"
-               fill="none"
-               viewBox="0 0 24 24"
-               stroke="currentColor"
-            >
-               <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-               />
-            </svg>
+            <X size={20} />
          </button>
       </div>
    );

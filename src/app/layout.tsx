@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const space = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
    title: "Subnetting Kalkulátor",
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
    return (
       <html lang="cs" className="dark">
-         <body className={`${inter.className} bg-zinc-100 dark:bg-zinc-900`}>
+         <body className={`${space.className} bg-zinc-100 dark:bg-zinc-900`}>
             {children}
          </body>
       </html>

@@ -1,6 +1,7 @@
 import React from "react";
 import { SubnetRequest } from "@/lib/types/subnetting";
 import SubnetInput from "./SubnetInput";
+import { Plus } from "lucide-react";
 
 interface SubnetListProps {
    subnets: SubnetRequest[];
@@ -28,8 +29,8 @@ const SubnetList: React.FC<SubnetListProps> = ({
    onRemoveSubnet,
 }) => {
    return (
-      <div className="bg-zinc-800 p-6 rounded-lg shadow-lg border border-zinc-700 mt-6">
-         <h2 className="text-xl font-semibold mb-4 text-zinc-100">
+      <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800 mt-6">
+         <h2 className="text-xl lg:text-2xl font-bold uppercase tracking-tighter mb-4 text-zinc-100">
             Požadavky na podsítě
          </h2>
          {subnets.map((subnet) => (
@@ -42,8 +43,9 @@ const SubnetList: React.FC<SubnetListProps> = ({
          ))}
          <button
             onClick={onAddSubnet}
-            className="mt-4 bg-zinc-600 hover:bg-zinc-500 text-zinc-100 font-bold py-2 px-4 rounded transition-colors"
+            className="cursor-pointer flex items-center justify-center gap-2 px-3 py-2 rounded-md bg-white text-zinc-900 hover:bg-zinc-200 font-medium uppercase tracking-tight transition-colors"
          >
+            <Plus size={18} />
             Přidat podsíť
          </button>
       </div>

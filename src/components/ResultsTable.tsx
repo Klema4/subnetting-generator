@@ -46,21 +46,25 @@ const ResultsList: React.FC<ResultsListProps> = ({ results }) => {
       value: string | number;
    }) => (
       <div className="flex justify-between items-center py-2 border-b border-zinc-700">
-         <span className="text-zinc-400">{label}</span>
-         <span className="font-mono text-zinc-200">{value}</span>
+         <span className="text-zinc-400 tracking-tight font-medium uppercase text-sm">
+            {label}
+         </span>
+         <span className="font-bold tracking-tight uppercase text-zinc-200">
+            {value}
+         </span>
       </div>
    );
 
    return (
       <div className="mt-8">
          <h2 className="text-2xl font-semibold mb-4 text-zinc-100">Výsledky</h2>
-         <div className="flex flex-col gap-4">
+         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {results.subnets?.map((subnet, index) => (
                <div
                   key={index}
-                  className="bg-zinc-800 p-6 rounded-lg shadow-lg border border-zinc-700"
+                  className="bg-zinc-800/50 p-6 rounded-xl border border-zinc-700/50"
                >
-                  <h3 className="text-xl font-bold text-zinc-100 mb-4">
+                  <h3 className="text-xl font-bold uppercase tracking-tighter text-zinc-100 mb-4">
                      {subnet.name}
                   </h3>
                   <div className="flex flex-col gap-1">

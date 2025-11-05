@@ -16,14 +16,14 @@ const IpInputForm: React.FC<IpInputFormProps> = ({
    setNetworkAddress,
 }) => {
    return (
-      <div className="bg-zinc-800 p-6 rounded-lg shadow-lg border border-zinc-700">
-         <h2 className="text-xl font-semibold mb-4 text-zinc-100">
+      <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
+         <h2 className="text-xl lg:text-2xl font-bold uppercase tracking-tighter mb-4 text-zinc-100">
             Základní síť
          </h2>
          <div>
             <label
                htmlFor="network-address"
-               className="block text-sm font-medium text-zinc-400 mb-1"
+               className="block text-sm font-medium tracking-tight text-zinc-400 mb-1"
             >
                Síťová adresa / CIDR
             </label>
@@ -31,7 +31,7 @@ const IpInputForm: React.FC<IpInputFormProps> = ({
                id="network-address"
                type="text"
                placeholder="např. 192.168.0.0/24"
-               className="w-full p-2 rounded-md bg-zinc-700 border border-zinc-600 text-zinc-100 font-mono"
+               className="w-full p-2.5 rounded-md bg-zinc-800/50 border border-zinc-700/50 text-white tracking-tight font-medium"
                value={networkAddress}
                onChange={(e) => setNetworkAddress(e.target.value)}
             />
