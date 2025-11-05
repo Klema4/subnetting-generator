@@ -15,12 +15,16 @@ import { calculateSubnets } from "@/lib/utils/subnetting";
  */
 const HomePage = () => {
    const [networkAddress, setNetworkAddress] = useState("192.168.0.0/24");
-   const [subnets, setSubnets] = useState<SubnetRequest[]>([
-      { id: crypto.randomUUID(), name: "Marketing", size: 25 },
-      { id: crypto.randomUUID(), name: "Vývoj", size: 50 },
-      { id: crypto.randomUUID(), name: "Účetní", size: 12 },
-   ]);
+   const [subnets, setSubnets] = useState<SubnetRequest[]>([]);
    const [results, setResults] = useState<SubnettingResult | null>(null);
+
+   React.useEffect(() => {
+      setSubnets([
+         { id: crypto.randomUUID(), name: "Marketing", size: 25 },
+         { id: crypto.randomUUID(), name: "Vývoj", size: 50 },
+         { id: crypto.randomUUID(), name: "Účetní", size: 12 },
+      ]);
+   }, []);
 
    const handleAddSubnet = () => {
       setSubnets([
